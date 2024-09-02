@@ -1,0 +1,21 @@
+a = 0
+b = 1.2
+f_a = 2 * a**2 - 5 * a + 3
+f_b = 2 * b**2 - 5 * b + 3
+
+if f_a * f_b > 0:
+    print("No root exists in the given interval.")
+else:
+    for i in range(1, 101):
+        c = (a + b) / 2  
+        f_c = 2 * c**2 - 5 * c + 3
+
+        if abs(f_c) < 1.0e-6:  
+            break
+        elif f_a * f_c < 0:
+            b = c  
+        else:
+            a = c  
+print(i,c)
+print('the root:%5f'%c)
+print('number of iteration:%d'%i)
