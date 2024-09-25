@@ -1,0 +1,40 @@
+x=list(eval(input('enter value of x list:')))      
+y = list(eval(input('Enter values for y list: ')))
+m = len(x)
+xp = eval(input('Enter the value of x for interpolation: '))
+yp = 0
+
+for i in range(m):
+    L = 1
+    for j in range(m):
+        if j != i:
+            L = L * (xp - x[j]) / (x[i] - x[j])
+    
+    yp = yp + y[i] * L
+    print('Iteration %d:' % (i))
+    print('y[%d] = %f' % (i, y[i]))
+    print('L = %f' % L)
+    print('For x=%.1f, y=%.1f' % (xp, yp))
+
+'''
+enter value of x list:5,7,11,13
+Enter values for y list: 150,392,1452,2366
+Enter the value of x for interpolation: 9
+Iteration 0:
+y[0] = 150.000000
+L = -0.166667
+For x=9.0, y=-25.0
+Iteration 1:
+y[1] = 392.000000
+L = 0.666667
+For x=9.0, y=236.3
+Iteration 2:
+y[2] = 1452.000000
+L = 0.666667
+For x=9.0, y=1204.3
+Iteration 3:
+y[3] = 2366.000000
+L = -0.166667
+For x=9.0, y=810.0
+
+'''
