@@ -1,5 +1,6 @@
 x = 0 # Initial Guess                     
 for iteration in range(1,101): # Setting iterations to 100 
+    print(iteration,x)
     x_new = (4*x**2 + 6)/10      # Finding the new value
     if abs(x_new - x) < 0.000001: # degree of accuracy condition
         break
